@@ -12,11 +12,19 @@
     <input type="submit" name="dice" value="振る">
 </form>
 
+{% if dice %}
+<div>
+    <div class="dice">
+    <img src="/static/images/dice_{{ dice }}.png" alt="さいころ{{ dice }}">
+    </div>
+</div>
+{% else %}
 <div>
     <div class="dice">
     <img src="/static/images/question.png" alt="はてな">
     </div>
 </div>
+{% endif %}
 
 <footer>Copyright PyQ</footer>
 </body>

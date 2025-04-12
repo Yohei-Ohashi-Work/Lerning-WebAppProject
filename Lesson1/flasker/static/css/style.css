@@ -28,5 +28,10 @@ footer {
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
+}
 
+.dice img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
 }
