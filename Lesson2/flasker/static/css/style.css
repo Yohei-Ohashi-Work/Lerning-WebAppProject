@@ -1,0 +1,35 @@
+body {
+    background-color: sandybrown;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+input[type="submit"] {
+    -webkit-appearance: button; /* Google Chrome用 */
+    width: 150px;
+    height: 50px;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+footer {
+    margin-top: 20px;
+}
+
+.result {
+    display: inline-block;
+    background-color: white;
+    text-align: center;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.message {
+    font-size: 32px;
+}

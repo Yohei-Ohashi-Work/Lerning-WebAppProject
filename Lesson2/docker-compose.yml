@@ -1,0 +1,15 @@
+services:
+  study-web-app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    volumes:
+      - .:/Lesson2  # このymlファイルがあるディレクトリの名前を使っている
+    tty: true
+    ports:
+      - "5001:5000"
+    environment:
+      - FLASK_APP=flasker/main.py
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1  # デバッグモードを有効化
+    command: flask run --host=0.0.0.0 --port=5000
