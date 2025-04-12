@@ -1,5 +1,5 @@
 body {
-    background-color: lightpink;
+    background-color: sandybrown;
     text-align: center;
 }
 
@@ -19,7 +19,7 @@ footer {
     margin-top: 20px;
 }
 
-.dice {
+.result {
     display: inline-block;
     background-color: white;
     text-align: center;
@@ -30,8 +30,6 @@ footer {
     padding-right: 10px;
 }
 
-.dice img {
-    width: 200px;
-    height: 200px;
-    object-fit: contain;
+.message {
+    font-size: 32px;
 }
