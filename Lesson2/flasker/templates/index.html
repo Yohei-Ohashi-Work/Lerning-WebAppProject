@@ -14,8 +14,12 @@
 
 <div>
     <div class="result">
+        {% if fortune%}
+        <img src="/static/images/fortune_{{ fortune['no']}}.png" alt="おみくじ{{ fortune['no']}}">
+        {% else %}
         <img src="/static/images/question.png" alt="はてな">
-        <div class="message"><!-- ここにメッセージを表示 --></div>
+        {% endif %}
+        <div class="message">{{ fortune['message'] }}</div>
     </div>
 </div>
 
