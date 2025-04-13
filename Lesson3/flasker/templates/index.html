@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>じゃんけんぽん！</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<h1>じゃんけんぽん！</h1>
+<div class="computer">
+    <h2>コンピューター</h2>
+    <div class="hand">
+    <img src="/static/images/gu.png" alt="グー">
+    <img src="/static/images/choki.png" alt="チョキ">
+    <img src="/static/images/pa.png" alt="パー">
+    <img src="/static/images/question.png" alt="はてな">
+    </div>
+</div>
+<div class="result_out">
+    <h2>結果</h2>
+    <div class="result">
+    </div>
+</div>
+
+<div class="user">
+    <h2>あなた</h2>
+    <form method="get" action="/">
+    <div class="user_type {% if res.user == 0 %}use_type{% endif %}">
+        <div class="hand"><img src="/static/images/gu.png" alt="グー"></div>
+        <br>
+        <input type="submit" name="user" value="グー"></div>
+    <div class="user_type {% if res.user == 1 %}use_type{% endif %}">
+        <div class="hand"><img src="/static/images/choki.png" alt="チョキ"></div>
+        <br>
+        <input type="submit" name="user" value="チョキ"></div>
+    <div class="user_type {% if res.user == 2 %}use_type{% endif %}">
+        <div class="hand"><img src="/static/images/pa.png" alt="パー"></div>
+        <br>
+        <input type="submit" name="user" value="パー">
+    </div>
+    </form>
+</div>
+
+<footer>Copyright PyQ</footer>
+</body>
+</html>
