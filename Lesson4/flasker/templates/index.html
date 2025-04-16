@@ -11,27 +11,37 @@
 <form method="post" action="/">
     <div>
         身長:
-        <input type="text" name="height" value="">
+        <input type="text" name="height" value="{% if res %}{{ res.height }}{% endif %}">
         cm
-        <br><span class="error"><!-- エラーメッセージを表示 --></span>
+        {% if res %}
+        <br><span class="error">{{ res.error_height }}</span>
+        {% endif %}
     </div>
     <div>
         体重:
-        <input type="text" name="weight" value="">
+        <input type="text" name="weight" value="{% if res %}{{ res.weight }}{% endif %}">
         kg
-        <br><span class="error"><!-- エラーメッセージを表示 --></span>
+        {% if res%}
+        <br><span class="error">{{ res.error_weight }}</span>
+        {% endif %}
     </div>
     <div>
         <input type="submit" name="calc" value="計算">
     </div>
 </form>
 
+{% if res %}
 <div>
+    {% if res.calc %}
     <h2>あなたのBMI値</h2>
     <div class="result">
-        <!-- 計算結果を表示 -->
+        {{ res.calc }}
     </div>
+    {% endif %}
 </div>
+{% endif %}
+
+
 
 <div class="source">
     <h2>参考情報</h2>
