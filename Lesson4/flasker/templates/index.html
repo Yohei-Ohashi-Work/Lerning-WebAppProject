@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>BMI値計算</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<h1>BMI値計算</h1>
+
+<form method="post" action="/">
+    <div>
+        身長:
+        <input type="text" name="height" value="">
+        cm
+        <br><span class="error"><!-- エラーメッセージを表示 --></span>
+    </div>
+    <div>
+        体重:
+        <input type="text" name="weight" value="">
+        kg
+        <br><span class="error"><!-- エラーメッセージを表示 --></span>
+    </div>
+    <div>
+        <input type="submit" name="calc" value="計算">
+    </div>
+</form>
+
+<div>
+    <h2>あなたのBMI値</h2>
+    <div class="result">
+        <!-- 計算結果を表示 -->
+    </div>
+</div>
+
+<div class="source">
+    <h2>参考情報</h2>
+    <table>
+        <tr><th>状態</th><th>指標</th></tr>
+        <tr><td>16.00未満</td><td>痩せすぎ</td></tr>
+        <tr><td>16.00以上 17.00未満</td><td>痩せ</td></tr>
+        <tr><td>17.00以上 18.50未満</td><td>痩せ気味</td></tr>
+        <tr><td>18.50以上 25.00未満</td><td>普通</td></tr>
+        <tr><td>25.00以上 30.00未満</td><td>前肥満</td></tr>
+        <tr><td>30.00以上 35.00未満</td><td>肥満（1度）</td></tr>
+        <tr><td>35.00以上 40.00未満</td><td>肥満（2度）</td></tr>
+        <tr><td>40.00以上</td><td>肥満（3度）</td></tr>
+    </table>
+
+    引用:&nbsp;</td><td><a href="https://ja.wikipedia.org/wiki/%E3%83%9C%E3%83%87%E3%82%A3%E3%83%9E%E3%82%B9%E6%8C%87%E6%95%B0">ボディマス指数 - Wikipedia</a>
+</div>
+
+<footer>Copyright PyQ</footer>
+</body>
+</html>
