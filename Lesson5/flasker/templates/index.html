@@ -24,20 +24,22 @@
         <th>日時</th>
         <th>メモ</th>
     </tr>
+    {% for item in res.list %}
     <tr>
-        <td>2018-06-08</td>
-        <td>今日食べたカレーは美味しかった</td>
+        <td>{{ item.created_at }}</td>
+        <td>{{ item.memo }}</td>
     </tr>
-    <tr>
-        <td>2018-06-07</td>
-        <td>PyQやろう</td>
-    </tr>
+    {% endfor %}
 </table>
 
 <div>
-    <a href="/">< 前へ</a>
-    1
-    <a href="/">次へ ></a>
+    {% if res.previous_page %}
+    <a href="/?page={{ res.previous_page }}">< 前へ</a>
+    {% endif %}
+    {{ res.page }}
+    {% if res.next_page %}
+    <a href="/?page={{ res.next_page }}">次へ ></a>
+    {% endif %}
 </div>
 <footer>Copyright PyQ</footer>
 </body>
