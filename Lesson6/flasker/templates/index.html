@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+<title>TODOリスト</title>
+</head>
+<body>
+    <h1>ToDo管理 アプリケーション</h1>
+    <table>
+        <tr>
+            <th>タスク名</th>
+            <th>期限</th>
+            <th>状態</th>
+        </tr>
+        {% for value in todo_list %}
+        <tr>
+            <td><a href="{{ url_for('show', id=value.id) }}">{{ value.name }}</a></td>
+            <td>{{ value.duedate }}</td>
+            <td>{{ value.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
