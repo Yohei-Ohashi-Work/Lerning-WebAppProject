@@ -17,6 +17,19 @@ def get_db_connection():
 @app.route("/")
 def index():
     conn = get_db_connection()
-    cursor = conn.cursor()
-    res = cursor.execute('SELECT * FROM todo')
-    return render_template('index.html', todo_list=res.fetchall())
+    try:
+        cursor = conn.cursor()
+        res = cursor.execute('SELECT * FROM todo')
+        return render_template('index.html', todo_list=res.fetchall())
+    finally:
+        conn.close()
+    
+@app.route('/show/<int:id>')
+def show(id):
+    conn = get_db_connection()
+    try:
+        cursor = conn.cursor()
+        res = cursor.execute('SELECT * FROM todo WHERE id = ?', (id,))
+        return render_template('detail.html', todo=res.fetchone())
+    finally:
+        conn.close()
