@@ -1,9 +1,11 @@
 import sqlite3
+import os
 
 from flask import Flask, render_template
 app = Flask(__name__)
 
-sqlite_path = 'db/todo.db'
+# データベースファイルのパス
+sqlite_path = os.path.join(os.path.dirname(__file__), 'db/todo.db')
 
 
 def get_db_connection():
@@ -14,4 +16,7 @@ def get_db_connection():
 
 @app.route("/")
 def index():
-    return render_template('index.html')
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    res = cursor.execute('SELECT * FROM todo')
+    return render_template('index.html', todo_list=res.fetchall())

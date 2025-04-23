@@ -13,6 +13,13 @@
             <th>期限</th>
             <th>状態</th>
         </tr>
+        {% for value in todo_list %}
+        <tr>
+            <td>{{ value['name'] }}</td>
+            <td>{{ value['duedate'] }}</td>
+            <td>{{ value['status'] }}</td>
+        </tr>
+        {% endfor %}
     </table>
 </body>
 </html>
