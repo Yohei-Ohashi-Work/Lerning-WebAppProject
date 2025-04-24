@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TODOリスト</title>
+</head>
+<body>
+  <h1>タスクを編集する</h1>
+  
+  <form action="{{ url_for('add_task') }}" method="post">
+    {% if error_list %}
+    <ul>
+      {% for value in error_list %}
+        <li>{{ value }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <p>タスク名<br><input type="text" name="name" value="{{ todo.name }}"></p>
+    <p>期日<br><input type="date" name="duedate" value="{{ todo.duedate }}"></p>
+    <p>メモ<br><input type="text" name="memo" value="{{ todo.memo }}" size="60"></p>
+    <input type="hidden" name="id" value="{{ todo.id }}">
+    <button type="submit">タスクを追加</button>
+  </form>
+  <br>
+  <a href="/">トップに戻る</a>
+</body>
+</html>
