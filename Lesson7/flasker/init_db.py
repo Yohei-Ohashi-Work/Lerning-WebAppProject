@@ -15,8 +15,8 @@ def init_db():
             id INTEGER PRIMARY KEY,
             name TEXT,
             duedate TEXT,
-            status TEXT,
-            memo TEXT            
+            status TEXT DEFAULT '未完了',
+            memo TEXT
         )
     ''')
     
